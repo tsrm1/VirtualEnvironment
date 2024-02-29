@@ -1,0 +1,58 @@
+Определение текущей версии Python
+python --version
+
+Создание (папки) виртуального окружения
+python -m venv venv
+
+Создание (папки) виртуального окружения с обновлением менеджера пакетов pip
+python -m venv venv --upgrade-deps
+
+Удаление (папки) вирутального окружения
+rm .\venv\
+
+Активация виртуального окружения
+.\venv\Scripts\activate
+
+Если возникает ошибка безопасности, при активации виртуального окружения
+прописываем в PowerSchell от имени администратора
+-> Get-ExecutionPolicy
+=> Restricted
+
+-> Set-ExecutionPolicy AllSigned
+-> Get-ExecutionPolicy
+=> AllSigned
+
+не желательно!
+-> Set-ExecutionPolicy unrestricted
+
+
+Деактивация виртуального окружения
+deactivate
+
+Список установленных всех (включая стандартные) пакетов в Python
+pip list
+
+Список установленных пользовательский (не включая стандартные) пакетов в Python
+pip freeze
+
+Список установленных пользовательский (не включая стандартные) пакетов в Python,
+выводим в файл requirements.txt
+pip freeze > requirements.txt
+
+Обновление pip
+python -m pip install --upgrade pip
+
+Установка пользовательских пакетов
+pip install requests openpyxl Pillow youtube-dl
+
+Установка пользовательских пакетов из файла requirements.txt
+pip install -r .\requirements.txt
+
+Определение путей к установенным Python различных версий
+Windows+R -> cmd -> where python
+=> 
+C:\Users\Roman\AppData\Local\Programs\Python\Python310\python.exe
+C:\Users\Roman\AppData\Local\Programs\Python\Python311\python.exe
+
+Создание вирутального окружения для Определенной версии Python
+C:\Users\Roman\AppData\Local\Programs\Python\Python311\python.exe -m venv venv --upgrade-deps
